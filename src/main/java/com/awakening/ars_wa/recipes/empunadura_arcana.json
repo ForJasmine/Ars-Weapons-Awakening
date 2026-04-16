@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " S ",
+    "FFF",
+    " G "
+  ],
+  "key": {
+    "S": { "item": "ars_nouveau:source_gem" },
+    "F": { "item": "ars_wa:fragmento_desgastado" },
+    "G": { "item": "minecraft:gold_ingot" }
+  },
+  "result": {
+    "item": "ars_wa:empunadura_arcana",
+    "count": 1
+  }
+}

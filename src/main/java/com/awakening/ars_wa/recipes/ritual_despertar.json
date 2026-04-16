@@ -1,0 +1,18 @@
+{
+  "type": "ars_nouveau:enchanting_apparatus",
+  "reagents": [
+    { "item": "minecraft:gold_block" },
+    { "item": "minecraft:gold_block" },
+    { "item": "ars_nouveau:source_gem_block" },
+    { "item": "ars_nouveau:source_gem_block" },
+    { "item": "ars_wa:empunadura_arcana" },
+    { "item": "minecraft:crying_obsidian" }
+  ],
+  "source": {
+    "tag": "forge:tools"
+  },
+  "output": {
+    "item": "ars_nouveau:blank_parchment"
+  },
+  "keep_nbt_of_source": true
+}
