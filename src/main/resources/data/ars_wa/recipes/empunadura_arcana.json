@@ -1,0 +1,21 @@
+{
+  "type": "ars_nouveau:enchanting_apparatus",
+  "keepNbtOfReagent": false,
+  "reagent": [
+    { "item": "ars_nouveau:dowsing_rod" }
+  ],
+  "pedestalItems": [
+    { "item": "minecraft:netherite_ingot" },
+    { "item": "minecraft:netherite_ingot" },
+    { "item": "ars_nouveau:source_gem_block" },
+    { "item": "minecraft:gold_block" },
+    { "item": "minecraft:gold_block" },
+    { "item": "ars_wa:fragmento_desgastado" },
+    { "item": "ars_wa:fragmento_desgastado" },
+    { "item": "ars_wa:fragmento_desgastado" }
+  ],
+  "sourceCost": 10000,
+  "output": {
+    "item": "ars_wa:empunadura_arcana"
+  }
+}

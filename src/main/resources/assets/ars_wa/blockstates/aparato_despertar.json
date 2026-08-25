@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "ars_wa:block/awakening_table" },
+    "facing=east":  { "model": "ars_wa:block/awakening_table", "y": 90 },
+    "facing=south": { "model": "ars_wa:block/awakening_table", "y": 180 },
+    "facing=west":  { "model": "ars_wa:block/awakening_table", "y": 270 }
+  }
+}

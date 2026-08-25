@@ -11,7 +11,7 @@ group = mod_group_id
 base {
     archivesName = mod_id
 }
-
+ 
 // Mojang ships Java 17 to end users in 1.18+, so your mod should target Java 17.
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
@@ -84,6 +84,14 @@ minecraft {
         client {
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
             property 'forge.enabledGameTestNamespaces', mod_id
+
+
+            // --- INICIO DEL FIX PARA CURIOS ---
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+            // --- FIN DEL FIX ---
+
+
         }
 
         server {
@@ -112,50 +120,38 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
-   // Este es el de Forge, NO lo quites porque si no, no bajará el motor del juego
-    maven {
-        name 'MinecraftForge'
-        url 'https://maven.minecraftforge.net/'
-    }
-    // Repositorio oficial de GeckoLib
+    maven { name 'MinecraftForge'; url 'https://maven.minecraftforge.net/' }
     maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }
-
-    // Repositorio para Ars Nouveau y otras dependencias de magia
     maven { url 'https://maven.blamejared.com/' }
-
+    
+    // --- PLAN B: Repositorio de CurseForge ---
+    maven {
+        url "https://cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
+    
+    flatDir { dir 'libs' } // Fundamental para que vea tu carpeta local
     mavenCentral()
 }
 
-
 dependencies {
-    // Specify the version of Minecraft to use.
-    // Any artifact can be supplied so long as it has a "userdev" classifier artifact and is a compatible patcher artifact.
-    // The "userdev" classifier will be requested and setup by ForgeGradle.
-    // If the group id is "net.minecraft" and the artifact id is one of ["client", "server", "joined"],
-    // then special handling is done to allow a setup of a vanilla dependency without the use of an external repository.
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
-    // Example mod dependency with JEI - using fg.deobf() ensures the dependency is remapped to your development mappings
-    // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
-    // compileOnly fg.deobf("mezz.jei:jei-${mc_version}-common-api:${jei_version}")
-    // compileOnly fg.deobf("mezz.jei:jei-${mc_version}-forge-api:${jei_version}")
-    // runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}")
-
-    // Example mod dependency using a mod jar from ./libs with a flat dir repository
-    // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
-    // The group id is ignored when searching -- in this case, it is "blank"
-    // implementation fg.deobf("blank:coolmod-${mc_version}:${coolmod_version}")
-
-    // For more info:
-    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
-    // http://www.gradle.org/docs/current/userguide/dependency_management.html
-    
-   // CORRECCIÓN: Cambiamos 'com.berniegpt' por 'software.bernie.geckolib'
     implementation fg.deobf("software.bernie.geckolib:geckolib-forge-1.20.1:4.4.4")
+    
+    // Cargamos Ars Nouveau de forma local desde la carpeta libs/
+    implementation fg.deobf("local:ars_nouveau:1")
+    
+    implementation fg.deobf("local:curios-forge:5.14.1+1.20.1")
+    
+    // Patchouli para poder ver y probar el Worn Notebook
+    implementation fg.deobf("vazkii.patchouli:Patchouli:1.20.1-81-FORGE")
 
-    // Esto descarga la API de Ars Nouveau para que puedas programar sobre ella
-    // El formato es: curse.maven:nombre-del-mod-id:archivo-id
-   implementation fg.deobf(files("libs/ars_nouveau-1.20.1-4.12.7-all.jar"))
+    // JEI (Just Enough Items) para ver las recetas en el juego
+    compileOnly fg.deobf("mezz.jei:jei-1.20.1-forge-api:15.3.0.4")
+    runtimeOnly fg.deobf("mezz.jei:jei-1.20.1-forge:15.3.0.4")
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

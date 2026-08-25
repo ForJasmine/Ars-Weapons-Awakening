@@ -1,0 +1,31 @@
+{
+  "name": "Aparato de Despertar",
+  "icon": "ars_wa:aparato_despertar",
+  "category": "ars_nouveau:ars_wa",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "El $(item)Aparato de Despertar$() es una antigua mesa de rituales. Al colocar un arma compatible en ella y canalizar el poder de una $(item)Empuñadura Arcana$(), puedes desbloquear su verdadero potencial mágico y permitirle almacenar hechizos."
+    },
+    {
+      "type": "ars_nouveau:apparatus_recipe",
+      "recipe": "ars_wa:aparato_despertar",
+      "text": "El ritual para fabricar el Aparato de Despertar."
+    },
+    {
+      "type": "ars_nouveau:apparatus_recipe",
+      "recipe": "ars_wa:empunadura_arcana",
+      "text": "Fabricar la Empuñadura Arcana requiere una gran cantidad de Fuente."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Ritual de Despertar",
+      "text": "Para despertar un arma, haz clic derecho sobre el $(item)Aparato de Despertar$() vacío con el arma para colocarla sobre este. Luego, sosteniendo una $(item)Empuñadura Arcana$(), haz clic derecho en el aparato para consumirla y completar el ritual."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Inscripción",
+      "text": "Con un arma despertada colocada en el $(item)Aparato$(), puedes inscribirle magia. Sostén un $(item)Pergamino de Hechizo$() (con tu hechizo deseado) y haz clic derecho. El hechizo se grabará en el arma para siempre."
+    }
+  ]
+}

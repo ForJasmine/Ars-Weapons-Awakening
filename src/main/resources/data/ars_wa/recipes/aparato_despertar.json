@@ -1,0 +1,21 @@
+{
+  "type": "ars_nouveau:enchanting_apparatus",
+  "keepNbtOfReagent": false,
+  "reagent": [
+    { "item": "minecraft:anvil" }
+  ],
+  "pedestalItems": [
+    { "item": "ars_wa:fragmento_desgastado" },
+    { "item": "ars_wa:fragmento_desgastado" },
+    { "item": "minecraft:gold_ingot" },
+    { "item": "minecraft:gold_ingot" },
+    { "item": "ars_nouveau:archwood_planks" },
+    { "item": "ars_nouveau:archwood_planks" },
+    { "item": "ars_nouveau:archwood_planks" },
+    { "item": "ars_nouveau:archwood_planks" }
+  ],
+  "sourceCost": 2000,
+  "output": {
+    "item": "ars_wa:aparato_despertar"
+  }
+}

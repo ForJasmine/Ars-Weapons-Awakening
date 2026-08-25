@@ -1,0 +1,31 @@
+{
+  "name": "Awakening Apparatus",
+  "icon": "ars_wa:aparato_despertar",
+  "category": "ars_nouveau:ars_wa",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Awakening Apparatus$() is an ancient ritual table. By placing a compatible weapon on it and channeling the power of an $(item)Arcane Hilt$(), you can unlock its true magical potential and allow it to store spells."
+    },
+    {
+      "type": "ars_nouveau:apparatus_recipe",
+      "recipe": "ars_wa:aparato_despertar",
+      "text": "The ritual to craft the Awakening Apparatus."
+    },
+    {
+      "type": "ars_nouveau:apparatus_recipe",
+      "recipe": "ars_wa:empunadura_arcana",
+      "text": "Crafting the Arcane Hilt requires a great amount of Source."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Awakening Ritual",
+      "text": "To awaken a weapon, right-click the empty $(item)Awakening Apparatus$() with the weapon to place it on it. Then, holding an $(item)Arcane Hilt$(), right-click the apparatus to consume it and complete the ritual."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Inscription",
+      "text": "With an awakened weapon placed on the $(item)Awakening Apparatus$(), you can inscribe magic into it. Hold a $(item)Spell Parchment$() (with your desired spell) and right-click. The spell will be engraved on the weapon forever."
+    }
+  ]
+}

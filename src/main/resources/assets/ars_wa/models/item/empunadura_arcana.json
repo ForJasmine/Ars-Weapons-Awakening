@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "ars_wa:item/empunadura_arcana"
+  }
+}
